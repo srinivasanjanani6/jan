@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URL Redirection</title>
+</head>
+<body>
+  <div class="container">
+    <h2>URL Redirection</h2>
+    <form id="redirectForm" onsubmit="redirect()">
+      <div class="input-group">
+        <label for="url">Enter a URL:</label>
+        <input type="text" id="url" name="url" required>
+      </div>
+      <button type="submit">Go</button>
+    </form>
+  </div>
+
+  <script>
+    function redirect() {
+      event.preventDefault();
+      var url = document.getElementById("url").value;
+
+      // Check if the entered URL contains "github.com"
+      if (url.includes("github.com")) {
+        window.location.href = "https://www.bind.com"; // Redirect to www.bind.com
+      } else {
+        // Redirect to the entered URL
+        window.location.href = url;
+      }
+    }
+  </script>
+</body>
+</html>
